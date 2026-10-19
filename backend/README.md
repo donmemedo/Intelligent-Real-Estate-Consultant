@@ -31,7 +31,10 @@ Contract IDs (CW-xx and SEC-xx in `../docs/IREC V1.pdf`) are cited in code where
 
 ## Develop
 
+The backend container uses Python 3.13.6. For local development, use Python 3.13.x and generate a compatible lockfile before syncing dependencies. The old bundled lockfile targeted Python 3.14 and has been omitted; commit the newly generated `uv.lock` if you need repeatable, pinned dependency resolution.
+
 ```bash
+uv lock --python 3.13.6
 uv sync
 export TEST_DATABASE_URL=postgresql+psycopg://postgres:postgres@localhost:5432/irec_test  # throwaway DB
 uv run pytest          # rebuilds the schema with the real migration

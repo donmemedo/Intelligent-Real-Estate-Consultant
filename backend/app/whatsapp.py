@@ -124,5 +124,5 @@ async def send_text(
 def _error_text(response: httpx.Response) -> str:
     try:
         return str(response.json()["error"]["message"])[:200]
-    except ValueError, KeyError, TypeError:
+    except (ValueError, KeyError, TypeError):
         return "no details"
