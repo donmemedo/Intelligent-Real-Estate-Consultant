@@ -67,7 +67,7 @@ jobs:
       - name: SAST
         run: >-
           docker run --rm -v "$PWD:/src" -w /src semgrep/semgrep semgrep scan --metrics=off --error
-          --config .semgrep/irec.yml --config p/python --config p/typescript --config p/react --config p/nextjs
+          --config .semgrep/closivo.yml --config p/python --config p/typescript --config p/react --config p/nextjs
           --config p/owasp-top-ten --config p/secrets backend/app frontend/app frontend/components frontend/lib
       - name: Dockerfile lint
         run: |

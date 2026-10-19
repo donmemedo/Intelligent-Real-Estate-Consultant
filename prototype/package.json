@@ -1,0 +1,31 @@
+{
+  "name": "propagent-ux-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check:home-baseline": "node scripts/check-home-baseline.cjs",
+    "check:agent-journeys": "node scripts/check-agent-journeys.cjs",
+    "check:lead-continuation": "node scripts/check-lead-continuation.cjs",
+    "check:walkthrough": "node scripts/check-walkthrough.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "next": "16.2.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9.39.0",
+    "eslint-config-next": "16.2.6",
+    "typescript": "5.7.3"
+  },
+  "packageManager": "pnpm@11.25.0"
+}

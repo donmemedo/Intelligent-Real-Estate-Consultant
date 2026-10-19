@@ -2,7 +2,7 @@
 
 FastAPI API plus an outbox worker on PostgreSQL. It covers leads from WhatsApp, Do-not-contact, adviser handoff and gated human replies.
 
-Contract IDs (CW-xx and SEC-xx in `docs/IREC V1.pdf`) are cited in code where a rule comes from.
+Contract IDs (CW-xx and SEC-xx in `../docs/IREC V1.pdf`) are cited in code where a rule comes from.
 
 ## Layout
 
@@ -65,7 +65,7 @@ Every setting can also be given as `NAME_FILE`, a path to a secret file; the fil
 
 ## Deploy
 
-See `deploy/compose.yml`, which runs Caddy (TLS), the frontend, the api, the worker and Postgres 18.
+For local development, use the root `docker-compose.yml`. For production, see `../deploy/compose.yml`, which runs Caddy (TLS), the frontend, the API, the worker and Postgres 18.
 
 The containers are hardened:
 

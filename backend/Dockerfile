@@ -1,6 +1,6 @@
 # IREC backend: one image for the API (default command) and the worker (python -m app.worker).
 # Pin both base images by digest in CI (FROM python:3.14-slim@sha256:...) for reproducible builds.
-FROM python:3.13.16-slim AS build
+FROM python:3.13.6-slim AS build
 COPY --from=ghcr.io/astral-sh/uv:0.12.17 /uv /bin/uv
 WORKDIR /app
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy UV_PYTHON_DOWNLOADS=never

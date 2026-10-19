@@ -1,0 +1,80 @@
+.journey-context-card {
+  margin-top: 16px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f7f7f4;
+}
+
+.journey-context-card > span,
+.journey-owner-box > span {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.journey-context-card > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.journey-context-card small {
+  padding: 6px 8px;
+  border-radius: 7px;
+  background: white;
+  color: #4d5a54;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.journey-state-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(190px, .5fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.journey-state-grid .outcome-box {
+  margin-top: 0;
+}
+
+.journey-owner-box {
+  padding: 20px;
+  border-radius: 12px;
+  background: var(--blue-soft);
+}
+
+.journey-owner-box strong {
+  display: block;
+  margin-top: 7px;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.journey-complete-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@media (max-width: 760px) {
+  .journey-state-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-complete-actions {
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+
+  .journey-complete-actions .button {
+    justify-content: center;
+    width: 100%;
+  }
+}
