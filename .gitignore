@@ -1,0 +1,22 @@
+.next/
+node_modules/
+.DS_Store
+*.log
+*.tsbuildinfo
+.env*
+!.env.example
+
+.idea
+graphify-out/cache
+# Backend (Python)
+.venv/
+__pycache__/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Deployment secrets never leave the server
+deploy/secrets/
+
+# Signed/draft contracts hold personal data and prices; never publish them
+docs

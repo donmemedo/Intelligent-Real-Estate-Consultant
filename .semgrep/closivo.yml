@@ -1,0 +1,25 @@
+# Architecture rules enforced in CI (contract SEC-06, SEC-09, SEC-10, SEC-25).
+rules:
+  - id: whatsapp-send-outside-worker
+    message: Only app/worker.py may call the WhatsApp send API, after the send gate re-check.
+    severity: ERROR
+    languages: [python]
+    pattern-either:
+      - pattern: whatsapp.send_text(...)
+      - pattern: send_text(...)
+    paths:
+      include: ["**/backend/app/"]
+      exclude: ["**/backend/app/worker.py", "**/backend/app/whatsapp.py"]
+
+  - id: raw-sql-string-formatting
+    message: Build SQL with SQLAlchemy expressions or bound parameters, never string formatting.
+    severity: ERROR
+    languages: [python]
+    pattern-either:
+      - pattern: text(f"...")
+      - pattern: text("..." + $X)
+      - pattern: text("..." % $X)
+      - pattern: $DB.exec_driver_sql(f"...")
+    paths:
+      include: ["**/backend/app/"]
+
